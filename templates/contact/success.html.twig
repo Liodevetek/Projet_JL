@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+
+
+
+<h1>le message a bien été envoyé et que le visiteur sera recontacté au plus vite à l'adresse email "{{ email_uti }}" </h1>
+
+Votre mail : {{ email_uti }}<br />
+L'objet de votre demande {{ objet_mail }}<br />
+Votre demande : {{ message }}<br />
+
+
+
+
+
+{% endblock %}
