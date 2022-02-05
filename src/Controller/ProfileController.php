@@ -45,15 +45,4 @@ class ProfileController extends AbstractController
         ]);
     }
 
-    #[Route('/', name: 'profile_delete', methods: ['POST'])]
-    public function delete(Request $request, EntityManagerInterface $entityManager): Response
-    {
-        $user= $this->getUser();
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($user);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
-    }
 }

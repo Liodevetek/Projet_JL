@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Produit;
 use App\Form\ProduitType;
 use App\Repository\ProduitRepository;
+use App\Service\FileUploader;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,13 +24,22 @@ class AdminProduitController extends AbstractController
     }
 
     #[Route('/new', name: 'admin_produit_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, FileUploader $fileUploader, EntityManagerInterface $entityManager): Response
     {
         $produit = new Produit();
         $form = $this->createForm(ProduitType::class, $produit);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+              $imageFile = $form->get('imageFilename')->getData();
+        if ($imageFile) {
+            $imageFilename = $fileUploader->upload($imageFile);
+            $produit->setimageFilename($imageFilename );
+        }
+
+
+
+
             $entityManager->persist($produit);
             $entityManager->flush();
 
