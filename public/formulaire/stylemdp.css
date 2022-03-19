@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gainsboro;
+    font-family: 'Roboto', sans-serif; 
+    
+}
+ 
+
+form{
+    margin-top: 20px;
+    background-color:rgb(0, 0, 0);
+    text-align: center;
+    padding: 40px 60px ;
+    min-width: 300px;
+    border-radius: 10px;
+
+}
+
+form h1{ 
+    color: white;
+    text-align: center; 
+    margin-bottom: 10px;
+}
+form .rsx{
+    display: flex;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+   
+
+}
+
+form .rsx p{
+    padding: 3px;
+    margin-left: 10px;
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+form .inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+form .inputs input[type="email"]{
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+    margin-bottom: 15px;
+    background-color: #f2f2f2;
+}
+
+
+form button{
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    font: size 15px; 
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+form p{
+    color: grey;
+
+}
+
+
+@media screen and (max-width: 150px){
+      
+
+}

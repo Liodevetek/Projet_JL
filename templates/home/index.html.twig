@@ -1,10 +1,72 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} JL Vente de champagne {% endblock %}
+{% extends 'navbar.html.twig'%}
+
+
+{% block css %} 
+<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block title %} JL so cheers {% endblock %}
 
 
 
 {% block body %}
-<h1>Bienvenue et Champagne pour tous!</h1>
+<header>
+          <h1>A votre santé</h1>
+          <button>parcourir</button>
+          <img src="uploads/jd.jpeg" class="card-img-top" alt="Vc IMAGES">
+        </header>
 
+
+
+
+
+
+    <nav>
+        <h1>J&L</h1>
+            <div class="onglets">
+                <a href="">Home</a>
+                <a href="">Produits</a>
+                <a href="">Contact</a>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+    </nav>
+        <header>
+          <h1>A votre santé</h1>
+          <button>parcourir</button>
+        
+        </header>
+        <h3>Meilleures Ventes</h3>
+        <div class="container">
+            <div class="card" style="width: 17rem";>
+                <img src="images/Vc.jpg" class="card-img-top" alt="Vc IMAGES">
+                <div class="card-body">
+                <h5 class="card-title">VEUVE CLIQUOT</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h4>35$</H4>
+                <a href="#" class="btn btn-primary">ACHETER</a>
+                </div>
+            </div>
+            
+            <div class="card" style="width: 17rem";>
+                <img src="images/Cirocws.jpg"  class="card-img-top" alt="Vc IMAGES">
+                <div class="card-body">
+                <h5 class="card-title">CIROC</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h4>28$</H4>
+                <a href="#" class="btn btn-primary">ACHETER</a>
+                </div>
+            </div>
+            <div class="card" style="width: 17rem";>
+                <img src="images/Belaire.jpg" class="card-img-top" alt="Vc IMAGES">
+                <div class="card-body">
+                <h5 class="card-title">BELAIRE</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h4>30$</H4>
+                <a href="#" class="btn btn-primary">ACHETER</a>
+                </div>
+            </div>
+        
 {% endblock %}

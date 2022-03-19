@@ -22,6 +22,9 @@ class Commande
     #[ORM\Column(type: 'datetime')]
     private $creation;
 
+    #[ORM\OneToOne(mappedBy: 'fromOrder', targetEntity: Paiement::class, cascade: ['persist', 'remove'])]
+    private $paiement;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,28 @@ class Commande
     public function setCreation(\DateTimeInterface $creation): self
     {
         $this->creation = $creation;
+
+        return $this;
+    }
+
+    public function getPaiement(): ?Paiement
+    {
+        return $this->paiement;
+    }
+
+    public function setPaiement(?Paiement $paiement): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($paiement === null && $this->paiement !== null) {
+            $this->paiement->setFromOrder(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($paiement !== null && $paiement->getFromOrder() !== $this) {
+            $paiement->setFromOrder($this);
+        }
+
+        $this->paiement = $paiement;
 
         return $this;
     }

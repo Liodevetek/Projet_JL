@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block css %} 
+<link rel="stylesheet" href="css/connexion.css">
+{% endblock %}
+
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+    <form>              
+        <h1>S'identifier</h1>
+            <div class="rsx">
+            <p><i class="fa-brands fa-instagram"></i></p>
+            <p><i class="fa-brands fa-twitter"></i></p>
+        </div>
+    <div class="inputs">
+        <input type="email" placeholder="Email">
+         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <input type="password" placeholder="Mot de passe">
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    </div>
+      <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+
+        <a href="">identifiants oubliés?</a>
+
+        
+    <div align="center">
+        <button type="submit"> Se connecter</button>
+    </div>
+
+        <p class="inscription">Pas de compte ? <span>S'inscrire</span></p>
+    </form>
+
+
+
+{% endblock %}

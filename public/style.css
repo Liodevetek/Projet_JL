@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:ital,wght@1,600&family=Roboto&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat' ,sans-serif;
+    height:100vh;
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid #6f6f6f;  
+}
+
+nav h1{
+    color: #717171;
+    font-family:'Playfair Display', sans-serif;
+    font-size: 30px;
+  
+}
+
+nav .onglets{
+    margin-top: 3px;
+    margin-left: 300px;
+}
+nav .onglets a{
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+    border-bottom: 1px solid black;
+    padding-bottom: 2px;
+
+}
+ 
+img{
+    height: 250px;
+   
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('images/claudio-schwarz-8EMTSSCnXVI-unsplash.jpg') no-repeat;
+    background-size:cover;
+    color: white;
+    padding: 180px;
+  
+
+}
+header h1{
+    font-family:'Playfair Display', sans-serif;
+}
+@media screen and (max-width: 680px){
+    nav .onglets{
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}
+    
+
+.container{
+    display: flex;
+    margin-top: 50px;
+   
+    
+}
+
+
+   
+   
+
+}

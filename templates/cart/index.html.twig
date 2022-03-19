@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+{% if cart.elements %}
+
+<div>
+  Total du panier : {{ cart.total}}
+  </div>
+<table>
+    <tr>
+         <th>Nom du Produit</th>
+         <th>Quantité</th>
+         <th>Prix</th>
+    </tr>
+
+    {% for element in cart.elements %}
+
+    <tr>
+         <th>{{element.produit.nom}}</th>
+         <th>{{element.quantity}}</th>
+         <th>{{element.produit.prix}}</th>
+    </tr>
+
+{% endfor%}
+
+</table>
+
+{% endif %}
+
+{% endblock %}

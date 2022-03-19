@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+      <script> 
+          (function() {
+              const stripe = stripe('pk_test_51KMuNgBaKZhG9Y5AFxUwZ3wxHjFQgfXhOw98P9BlRGl6T72KE407LD4GZC6glKvNKFvTmCICmRmEnOaYYcxnmsBi00pVdZCwvv')
+              stripe.redirectToCheckout({
+                 sessionId: "{{ sessionId }}"
+              })
+          })();   
+      </script>
+{% endblock %}
